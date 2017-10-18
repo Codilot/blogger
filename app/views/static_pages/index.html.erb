@@ -1,0 +1,89 @@
+<% provide(:title, "Home") %>
+
+
+<div class="jumbotron">
+  <div class="container">
+
+    <h1>Welcome to my Blog</h1>
+    <h2>
+      It's all about blogging: 
+      <%= link_to 'My Blog', controller: 'articles' %>
+    </h2>
+    <br>
+    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+
+    <p class="credential">
+      <%= link_to image_tag("rails.png", alt: "Rails logo"),'http://rubyonrails.org/' %> 
+      Made with Rails
+    </p>
+    
+  </div>
+</div>
+
+ 
+
+<div class="container accordion-body">
+  <h1 class="text-center">Latest Blogs</h1>
+    <div class="row">
+
+      <% if @articles_latest != nil %>
+        <% @articles_latest.each do |article| %>
+          <div class="col-sm-4 blog-item">
+            <h2><%= article.title %></h2>
+            <strong><%= article.created_at %></strong>
+            <p><%= article.teaser %></p>
+            <%= link_to 'Read more', article_path(article), class: "btn btn-default" %>
+          </div>
+        <% end %>
+      <% end %>
+
+    </div>
+
+
+  <% if @articles_second_latest != nil %>
+    <button type="button" class="btn btn-info center-block show-more" data-toggle="collapse" data-target="#blog-items-level-one">Show More Blogposts</button>
+
+    <div id="blog-items-level-one" class="collapse">
+
+      <div class="container">
+        <div class="row">
+
+
+            <% @articles_second_latest.each do |article| %>
+              <div class="col-sm-4 blog-item anchor">
+                <h2><%= article.title %></h2>
+                <strong><%= article.created_at %></strong>
+                <p><%= article.teaser %></p>
+                <%= link_to 'Read more', article_path(article), class: "btn btn-default" %>
+              </div>
+            <% end %>
+
+
+        </div>
+      </div>
+      
+      <% if @articles_third_latest != nil %>
+        <button type="button" class="btn btn-info center-block show-more" data-toggle="collapse" data-target="#blog-items-level-two">Show More Blogposts</button>
+
+        <div id="blog-items-level-two" class="collapse">
+          <div class="container">
+            <div class="row">
+              
+                <% @articles_third_latest.each do |article| %>
+                  <div class="col-sm-4 blog-item">
+                    <h2><%= article.title %></h2>
+                    <strong><%= article.created_at %></strong>
+                    <p><%= article.teaser %></p>
+                    <%= link_to 'Read more', article_path(article), class: "btn btn-default" %>
+                  </div>
+                <% end %>
+             
+            </div>
+          </div>
+        </div>
+      <% end %> <!-- if @articles_third_latest != nil -->
+
+    </div><!-- end blog level one -->
+  <% end %><!-- if @articles_second_latest != nil -->
+</div><!-- end container -->
+ 

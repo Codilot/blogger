@@ -1,7 +1,40 @@
 <% provide(:title, "Contact") %>
 
 <div class="container">
-  <h1 class="text-center">Contact</h1>
-  <p>contact the blogger</p>
+
+ <div class="contacts text-center">
+  <h1>Contact</h1>
+  <h2>Visit us</h2>
+  <p>blogger street 190</p>
+  <p>99999 Dreamcity</p>
+  <p>Great District</p>
+  </div>
+
+  <div class="col-sm-6">
+    <form>
+      <div class="form-group">
+        <label for="Name">Name</label>
+        <input type="text" id="Name" class="form-control" placeholder="Enter your name" title="Enter your Name">
+      </div>
+
+      <div class="form-group">
+        <label for="Email">Email adress</label>
+        <input type="email" id="Email" class="form-control" placeholder="Enter your email" required="required" title="Enter your email adress (required)">
+      </div>
+    </form>
+  </div>
+  <div class="col-sm-6">
+    <form>
+    <div class="form-group">
+    <label for="Message-box">Your Message</label>
+      <textarea id="Message-box" class="form-control" style="resize:none" cols="40" rows="5" placeholder="Your message here" required="required" title="Enter your message (required)"></textarea>
+      </div>
+    </form>
+  </div>
+  <div class="col-sm-12">
+    <form>
+       <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+  </div>
 </div>
 

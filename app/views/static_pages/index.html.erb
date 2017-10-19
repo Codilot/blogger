@@ -22,60 +22,46 @@
 
  
 
-<div class="container accordion-body">
+<div class="container" id="accordion">
   <h1 class="text-center">Latest Blogs</h1>
     <div class="row">
 
       <% if @articles_latest != nil %>
         <% @articles_latest.each do |article| %>
-          <div class="col-sm-4 blog-item">
-            <h2><%= article.title %></h2>
-            <strong><%= article.created_at %></strong>
-            <p><%= article.teaser %></p>
-            <%= link_to 'Read more', article_path(article), class: "btn btn-default" %>
-          </div>
+          <%= render partial: "shared/article_block", locals: {article: article} %>
         <% end %>
       <% end %>
 
     </div>
-
+    
 
   <% if @articles_second_latest != nil %>
-    <button type="button" class="btn btn-info center-block show-more" data-toggle="collapse" data-target="#blog-items-level-one">Show More Blogposts</button>
+
+    <button id="btn-level-one" type="button" class="btn btn-info center-block show-more" data-toggle="collapse" data-target="#blog-items-level-one">Show More Blogposts</button>
 
     <div id="blog-items-level-one" class="collapse">
 
       <div class="container">
-        <div class="row">
+        <div class="row anchor-level-one">
 
 
             <% @articles_second_latest.each do |article| %>
-              <div class="col-sm-4 blog-item anchor">
-                <h2><%= article.title %></h2>
-                <strong><%= article.created_at %></strong>
-                <p><%= article.teaser %></p>
-                <%= link_to 'Read more', article_path(article), class: "btn btn-default" %>
-              </div>
+              <%= render partial: "shared/article_block", locals: {article: article} %>
             <% end %>
 
 
         </div>
-      </div>
-      
+      </div> 
+
       <% if @articles_third_latest != nil %>
-        <button type="button" class="btn btn-info center-block show-more" data-toggle="collapse" data-target="#blog-items-level-two">Show More Blogposts</button>
+        <button id="btn-level-two" type="button" class="btn btn-info center-block show-more" data-toggle="collapse" data-target="#blog-items-level-two">Show More Blogposts</button>
 
         <div id="blog-items-level-two" class="collapse">
           <div class="container">
-            <div class="row">
+            <div class="row anchor-level-two">
               
                 <% @articles_third_latest.each do |article| %>
-                  <div class="col-sm-4 blog-item">
-                    <h2><%= article.title %></h2>
-                    <strong><%= article.created_at %></strong>
-                    <p><%= article.teaser %></p>
-                    <%= link_to 'Read more', article_path(article), class: "btn btn-default" %>
-                  </div>
+                  <%= render partial: "shared/article_block", locals: {article: article} %>
                 <% end %>
              
             </div>
@@ -86,4 +72,5 @@
     </div><!-- end blog level one -->
   <% end %><!-- if @articles_second_latest != nil -->
 </div><!-- end container -->
+
  

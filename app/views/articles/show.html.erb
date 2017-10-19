@@ -37,18 +37,21 @@
     </div><!-- col-sm-8 -->
     
     <div class="col-sm-4">
-      <h2>Read also</h2>
+      <h3>Read also</h3>
       <div class="random-item">
         <% if @random_article.image_url != nil %>
-          <%= link_to image_tag(@random_article.image_url, class: "img-responsive img-rounded") %>
+          <%= image_tag(@random_article.image_url, class: "img-responsive img-rounded") %>
         <% end%>
-        <h2><%= @random_article.title %></h2>
+        <h2><%= link_to @random_article.title, article_path(@random_article) %></h2>
+        <p class="teaser"><%= @random_article.teaser %></p>
+        <%= link_to 'Read more', article_path(@random_article), class: "btn btn-default" %>
       </div>
 
       <div class="article-list">
+        <h3>More articles</h3>
         <% if @articles_latest != nil %>
           <% @articles_latest.each do |article| %>
-             <h2><%= article.title %></h2>
+            <h2><%= link_to article.title, article_path(article) %></h2>
           <% end%>
         <% end%> 
       </div>

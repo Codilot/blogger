@@ -15,7 +15,7 @@
       </h4>
 
       <% if @article.image_url != nil %>
-        <%= link_to image_tag(@article.image_url, class: "img-rounded article_image") %>
+        <%= image_tag(@article.image_url, class: "img-rounded article-show-image img-responsive") %>
       <% end%>
 
       <p>
@@ -36,14 +36,15 @@
       </div>
     </div><!-- col-sm-8 -->
     
-    <div class="col-sm-4">
-      <h3>Read also</h3>
+    <div class="col-sm-4 sidebar">
+      
       <div class="random-item">
+        <h3>Featured</h3>
         <% if @random_article.image_url != nil %>
           <%= image_tag(@random_article.image_url, class: "img-responsive img-rounded") %>
         <% end%>
         <h2><%= link_to @random_article.title, article_path(@random_article) %></h2>
-        <p class="teaser"><%= @random_article.teaser %></p>
+        <p><%= @random_article.teaser %></p>
         <%= link_to 'Read more', article_path(@random_article), class: "btn btn-default" %>
       </div>
 

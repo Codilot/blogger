@@ -105,14 +105,49 @@ footer {
   min-height: 400px;
 }
 
-.btn.show-more {
+#btn-show-more {
  margin: 50px auto;
 }
 
-.article_image {
-  float: right;
-  margin: 0 0 10px 10px;
+.article-show-image {
+
+  margin: 25px auto;
 }
+
+.random-item {
+  border: 1px solid $gray-medium-light;
+  padding: 20px;
+  margin: 25px auto;
+}
+
+.article-list {
+  padding: 15px;
+  margin: 25px auto;
+  background-color: $grey-extra-light;
+}
+
+
+/* about */
+
+.image-frame {
+  img {
+    width: 200px;
+    margin: 50px auto;
+  }
+  h3 {
+    max-width: 400px;
+    padding: 25px;
+    margin: 50px auto;
+    border-top: 1px solid $gray-medium-light;
+    border-bottom: 1px solid $gray-medium-light;
+    color: $gray-light;
+    text-align: center;
+    font-style: italic;
+    letter-spacing: 0.1em;
+    line-height: 1.4em;
+  }
+}
+
 
 /* contact */
 .contacts {

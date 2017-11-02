@@ -11,7 +11,7 @@
     <% @articles.each do |article| %>
       <div class="col-sm-4 blog-item">
         <h2><%= article.title %></h2>
-        <strong><%= article.created_at %></strong>
+        <strong><%= @article.created_at.strftime("%d %B %Y | %I:%M %P") %></strong>
         <p><%= article.teaser %></p>
 
         <div class="btn-group">

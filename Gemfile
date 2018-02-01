@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.4.1'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -36,6 +37,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 
 gem 'bootstrap-sass', '3.3.7'
+
+
 
 
 

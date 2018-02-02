@@ -6,4 +6,13 @@ class Article < ApplicationRecord
   # ensures that all articles have a teaser of max 325 characters long                 
   validates :teaser, presence: true,
                      length: { maximum: 325, message: "Teaser cannot have more than 325 characters." }
+
+
+    def self.search(search_term)
+    if Rails.env.production?
+      Article.where("text ilike ?", "%#{search_term}%")
+    else
+      Article.where("text LIKE ?", "%#{search_term}%")
+    end  
+  end                   
 end

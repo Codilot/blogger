@@ -1,11 +1,12 @@
 class ArticlesController < ApplicationController
-  #authentication
-  http_basic_authenticate_with name: "eve", password: "secret", except: [:index, :show]  
-
-  #public actions
 
   def index
-    @articles = Article.all
+    if params[:q]
+      search_term = params[:q]
+      @articles = Article.search(search_term)
+    else
+      @articles = Article.all
+    end
   end
 
   def show

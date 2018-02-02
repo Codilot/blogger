@@ -10,9 +10,9 @@ class Article < ApplicationRecord
 
     def self.search(search_term)
     if Rails.env.production?
-      Article.where("text ilike ?", "%#{search_term}%")
+      Article.where("text ilike ?", "%#{search_term}%").order('id DESC')
     else
-      Article.where("text LIKE ?", "%#{search_term}%")
+      Article.where("text LIKE ?", "%#{search_term}%").order('id DESC')
     end  
   end                   
 end

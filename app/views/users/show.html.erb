@@ -1,0 +1,8 @@
+<% provide(:title, 'User Profile') %>
+
+<div class="container">
+  <h1><%= @user.name %></h1>
+  </h5><%= @user.email %></h5>
+
+  <p>Member since: <%= @user.created_at %></p>
+</div>

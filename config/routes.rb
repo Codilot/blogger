@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :users
+  resources :newsletters
   resources :articles do
     resources :comments
   end

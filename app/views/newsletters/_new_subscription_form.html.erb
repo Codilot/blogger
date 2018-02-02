@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-sm-12">
+    <h1>Subscribe my Newsletter!</h1>
+  </div>
+
+  <div class="col-lg-6 col-lg-offset-3">
+    <h2><%= @notice %></h2>
+    <%= form_with model: @newsletter do |f| %>
+      <div class="input-group">
+        <%= f.email_field :email, placeholder: 'mail@example.com', class: 'form-control' %>
+        <span class="input-group-btn">
+          <%= f.submit 'Subscribe', class: 'btn btn-default' %> 
+        </span>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="col-sm-12">
+    <hr class="divider">
+  </div>
+</div>

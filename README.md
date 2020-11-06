@@ -1,4 +1,4 @@
 # README
 
-Simple blogging app made with Ruby on Rails
-Demo: https://bloggilot.herokuapp.com/
+Simple blogging app made with Ruby on Rails.  
+Demo site: https://bloggilot.herokuapp.com/
